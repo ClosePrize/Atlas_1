@@ -7,17 +7,8 @@ vehicle= mavutil.mavlink_connection(address,baudrate=57600,autoreconnect= True)
 vehicle.wait_heartbeat()
 print("baglanti basarili")
 
-# while True:
-#     message= vehicle.recv_match(blocking= True)
-#     print(message)
-
-
-battery= vehicle.recv_match(type='BATTERY_STATUS', blocking=True)  
-print(f"Pil Yuzdesi: {battery.battery_remaining}")
-    
-message= vehicle.recv_match(type='VFR_HUD', blocking=True)
-print(f"Airspeed:  {message.airspeed}")
-
-msg = vehicle.recv_match(type = 'HEARTBEAT', blocking = True)
-mode = mavutil.mode_string_v10(msg)
-print(f"Mode: {mode}")
+def get_alt():
+    message = vehicle.recv_match(type='GLOBAL_POSITION_INT', blocking= True)
+    alt=message.relative_alt
+    alt = alt/1000
+    return alt 
