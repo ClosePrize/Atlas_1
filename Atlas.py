@@ -1,4 +1,4 @@
-from pymavlink import mavutil, mavwp
+from pymavlink import mavutil, mavwp          # Mustafa Çirci / Efecan Karatut
 
 wp= mavwp.MAVWPLoader()
 
