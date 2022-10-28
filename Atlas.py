@@ -2,7 +2,7 @@ from pymavlink import mavutil, mavwp
 
 wp= mavwp.MAVWPLoader()
 
-address = 'udpout:192.168.245.128:5760' 
+address = 'udpout:192.168.245.128:57600' 
 vehicle= mavutil.mavlink_connection(address,baudrate=57600,autoreconnect= True)
 vehicle.wait_heartbeat()
 print("baglanti basarili")
