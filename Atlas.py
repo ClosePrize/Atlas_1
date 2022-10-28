@@ -2,9 +2,7 @@ from pymavlink import mavutil, mavwp
 
 wp= mavwp.MAVWPLoader()
 
-address = 'udpin:0.0.0.0:9000' #simulasyon
-# address= '/dev/ttyACM0' #pixhawk usb
-# address= '/dev/ttyTHS1' #pixhawk telem2 baudrate= 115200
+address = 'udpiout:192.168.245.128:5760' 
 vehicle= mavutil.mavlink_connection(address,baudrate=57600,autoreconnect= True)
 vehicle.wait_heartbeat()
 print("baglanti basarili")
