@@ -11,4 +11,4 @@ def get_alt():
     message = vehicle.recv_match(type='GLOBAL_POSITION_INT', blocking= True)
     alt=message.relative_alt
     alt = alt/1000
-    return alt 
+    return al
